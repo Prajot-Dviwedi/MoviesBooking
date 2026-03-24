@@ -8,7 +8,7 @@ import userRouter from './routes/userRouter.js';
 import bookingRouter from './routes/bookingRouter.js';
 
 const app = express();
-const port = 5000;
+const port = process.env.port || 5000;
 
 // Middleware
 app.use(cors())
