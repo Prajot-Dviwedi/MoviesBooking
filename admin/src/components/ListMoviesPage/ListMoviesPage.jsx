@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import { styles5, customStyles } from "../../assets/dummyStyles";
 
-const API_BASE = "http://localhost:5000";
+const API_BASE = "https://moviesbookingback.onrender.com";
 
 // ---------- helpers ----------
 function normalizeApiBase(b) {
@@ -67,7 +67,7 @@ function getImageUrl(maybe) {
       const parsed = new URL(s);
       const host = parsed.hostname.toLowerCase();
 
-      // If DB stored a localhost URL, rewrite to API_BASE/uploads/<filename>
+      
       if (host === "localhost" || host === "127.0.0.1") {
         const parts = s.split("/uploads/");
         const filename = parts.length > 1 ? parts.pop() : parsed.pathname.split("/").pop();
