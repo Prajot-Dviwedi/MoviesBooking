@@ -97,10 +97,10 @@ export async function createMovie(req, res) {
   try {
     const body = req.body || {};
 
-    // upload-aware fields (store urls for poster/trailer/video; for lt.thumbnail we keep filename/cleaned value)
-    const posterUrl = req.files?.poster?.[0]?.filename ? getUploadUrl(req.files.poster[0].path) : (body.poster || null);
-    const trailerUrl = req.files?.trailerUrl?.[0]?.filename ? getUploadUrl(req.files.trailerUrl[0].filename) : (body.trailerUrl || null);
-    const videoUrl = req.files?.videoUrl?.[0]?.filename ? getUploadUrl(req.files.videoUrl[0].filename) : (body.videoUrl || null);
+
+    const posterUrl = req.files?.poster?.[0]?.path || (body.poster || null);
+    const trailerUrl = req.files?.trailerUrl?.[0]?.path || body.trailerUrl || null;
+    const videoUrl = req.files?.videoUrl?.[0]?.path || body.videoUrl || null;
 
     const categories = safeParseJSON(body.categories) || (body.categories ? String(body.categories).split(",").map(s => s.trim()).filter(Boolean) : []);
     const slots = safeParseJSON(body.slots) || [];
@@ -114,8 +114,8 @@ export async function createMovie(req, res) {
     const attachFiles = (filesArrName, targetArr, toFilename = (f) => getUploadUrl(f)) => {
       if (!req.files?.[filesArrName]) return;
       req.files[filesArrName].forEach((file, idx) => {
-        if (targetArr[idx]) targetArr[idx].file = toFilename(file.filename);
-        else targetArr[idx] = { name: "", file: toFilename(file.filename) };
+        if (targetArr[idx]) targetArr[idx].file = toFilename(file.path);
+        else targetArr[idx] = { name: "", file: toFilename(file.path) };
       });
     };
     attachFiles("castFiles", cast);
@@ -124,7 +124,7 @@ export async function createMovie(req, res) {
 
     // latest trailer
     const latestTrailerBody = safeParseJSON(body.latestTrailer) || {};
-    if (req.files?.ltThumbnail?.[0]?.filename) latestTrailerBody.thumbnail = req.files.ltThumbnail[0].filename;
+    if (req.files?.ltThumbnail?.[0]?.filename) latestTrailerBody.thumbnail = req.files.ltThumbnail[0].path;
     else if (body.ltThumbnail) {
       const fn = extractFilenameFromUrl(body.ltThumbnail);
       latestTrailerBody.thumbnail = fn ? fn : body.ltThumbnail;
