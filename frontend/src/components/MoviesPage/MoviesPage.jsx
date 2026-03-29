@@ -6,26 +6,6 @@ const API_BASE = "https://moviesbookingback.onrender.com";
 const COLLAPSE_COUNT = 12;
 const PLACEHOLDER = "https://via.placeholder.com/400x600?text=No+Poster";
 
-function getUploadUrl(maybe) {
-  if (!maybe) return null;
-  if (typeof maybe !== "string") return null;
-  if (maybe.startsWith("http://") || maybe.startsWith("https://")) {
-    if (/localhost:\d+/.test(maybe)) {
-      try {
-        const url = new URL(maybe);
-        const filename = url.pathname.split('/uploads/').pop();
-        return `${API_BASE}/uploads/${filename}`;
-      } catch (e) {
-        return maybe;
-      }
-    }
-    return maybe;
-  }
-
-  // relative or "uploads/..." -> build with API_BASE
-  const cleaned = String(maybe).replace(/^uploads\//, "");
-  return `${API_BASE}/uploads/${cleaned}`;
-}
 
 const categoriesList = [
   { id: "all", name: "All Movies" },

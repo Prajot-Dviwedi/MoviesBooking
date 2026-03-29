@@ -1,27 +1,12 @@
 // controllers/movieController.js
-import mongoose from "mongoose";
-import Movie from "../models/movieModel.js";
-import path from "path";
 import fs from "fs";
+import mongoose from "mongoose";
+import path from "path";
+import Movie from "../models/movieModel.js";
 
 const API_BASE = "https://moviesbookingback.onrender.com";
 
-/* ---------------------- small helpers ---------------------- */
-const getUploadUrl = (val) => {
-  if (!val) return null;
-  if (typeof val === "string" && /^(https?:\/\/)/.test(val)) return val;
-  const cleaned = String(val).replace(/^uploads\//, "");
-  if (!cleaned) return null;
-  return `${API_BASE}/uploads/${cleaned}`;
-};
 
-const extractFilenameFromUrl = (u) => {
-  if (!u || typeof u !== "string") return null;
-  const parts = u.split("/uploads/");
-  if (parts[1]) return parts[1];
-  if (u.startsWith("uploads/")) return u.replace(/^uploads\//, "");
-  return /^[^\/]+\.[a-zA-Z0-9]+$/.test(u) ? u : null;
-};
 
 const tryUnlinkUploadUrl = (urlOrFilename) => {
   const fn = extractFilenameFromUrl(urlOrFilename);
@@ -113,7 +98,7 @@ export async function createMovie(req, res) {
     const body = req.body || {};
 
     // upload-aware fields (store urls for poster/trailer/video; for lt.thumbnail we keep filename/cleaned value)
-    const posterUrl = req.files?.poster?.[0]?.filename ? getUploadUrl(req.files.poster[0].filename) : (body.poster || null);
+    const posterUrl = req.files?.poster?.[0]?.filename ? getUploadUrl(req.files.poster[0].path) : (body.poster || null);
     const trailerUrl = req.files?.trailerUrl?.[0]?.filename ? getUploadUrl(req.files.trailerUrl[0].filename) : (body.trailerUrl || null);
     const videoUrl = req.files?.videoUrl?.[0]?.filename ? getUploadUrl(req.files.videoUrl[0].filename) : (body.videoUrl || null);
 

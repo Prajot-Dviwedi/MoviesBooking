@@ -45,83 +45,12 @@ const PLACEHOLDER_IMG_SM = makePlaceholderDataUri(80, 80, "A");
 const PLACEHOLDER_IMG_MD = makePlaceholderDataUri(96, 96, "P");
 const PLACEHOLDER_POSTER = makePlaceholderDataUri(320, 480, "No Image");
 
-// ---------- robust getImageUrl (client-side normalization + localhost rewrite) ----------
+
 function normalizeApiBase(b) {
   return String(b || "").replace(/\/+$/, "");
 }
-function getImageUrl(maybe) {
-  if (!maybe) return null;
 
-  // If it's an object (multer-like etc.), probe common fields
-  if (typeof maybe === "object") {
-    if (Array.isArray(maybe) && maybe.length) return getImageUrl(maybe[0]);
-    const possible =
-      maybe.url ||
-      maybe.path ||
-      maybe.filename ||
-      maybe.file ||
-      maybe.image ||
-      maybe.src ||
-      maybe.photo ||
-      maybe.preview ||
-      null;
-    if (possible) return getImageUrl(possible);
-    return null;
-  }
 
-  if (typeof maybe !== "string") return null;
-  const sRaw = maybe.trim();
-  if (!sRaw) return null;
-
-  // allow inline data URIs
-  if (sRaw.startsWith("data:")) return sRaw;
-
-  const apiBase = normalizeApiBase(API_BASE);
-
-  // If it's protocol-relative (//host/...), add http for parsing
-  let toParse = sRaw;
-  if (toParse.startsWith("//")) toParse = "http:" + toParse;
-
-  // If it looks like "localhost:5000/..." without protocol, prefix http:// so URL can parse
-  if (/^localhost[:\/]/i.test(toParse) || /^127\.0\.0\.1[:\/]/.test(toParse)) {
-    toParse = "http://" + toParse;
-  }
-
-  // Absolute http(s) URL -> possibly rewrite localhost to API_BASE/uploads/<filename>
-  if (/^https?:\/\//i.test(toParse)) {
-    try {
-      const parsed = new URL(toParse);
-      const host = parsed.hostname.toLowerCase();
-      // rewrite localhost/127.0.0.1 to your API_BASE upload path
-      if (host === "localhost" || host === "127.0.0.1") {
-        const parts = parsed.pathname.split("/uploads/");
-        const filename = parts.length > 1 ? parts.pop() : parsed.pathname.split("/").pop();
-        if (filename) return `${apiBase}/uploads/${filename}`;
-        return `${apiBase}${parsed.pathname}`;
-      }
-      // otherwise return unchanged absolute URL (S3, remote)
-      return sRaw;
-    } catch (e) {
-      // fall through to treat as filename
-    }
-  }
-
-  // Leading slash like "/uploads/abc.png"
-  if (sRaw.startsWith("/")) return `${apiBase}/${sRaw.replace(/^\/+/, "")}`;
-
-  // Starting with "uploads/..." or plain filename
-  if (sRaw.startsWith("uploads/")) return `${apiBase}/${sRaw}`;
-
-  // If it starts with "localhost:..." or "127.0.0.1:..." without protocol
-  if (/^localhost[:\/]|^127\.0\.0\.1[:\/]/.test(sRaw)) {
-    const parts = sRaw.split("/uploads/");
-    const filename = parts.length > 1 ? parts.pop() : sRaw.split("/").pop();
-    return `${apiBase}/uploads/${filename}`;
-  }
-
-  // Default: treat it as a filename stored in uploads
-  return `${apiBase}/uploads/${sRaw.replace(/^uploads\//, "")}`;
-}
 
 // ---------- rest of helpers (unchanged logic, small cleanups) ----------
 const getParts = (dateLike, timeZone) => {

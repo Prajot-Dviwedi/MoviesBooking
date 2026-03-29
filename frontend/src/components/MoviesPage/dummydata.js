@@ -73,8 +73,8 @@ export const action = [
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -116,8 +116,8 @@ export const action = [
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -145,15 +145,15 @@ export const action = [
     genre: "Action",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-   director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -183,15 +183,15 @@ export const action = [
     genre: "Action",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -276,8 +276,8 @@ export const action = [
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -307,15 +307,15 @@ export const action = [
     genre: "Action",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -350,15 +350,15 @@ export const action = [
     genre: "Action",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -400,8 +400,8 @@ export const action = [
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -443,8 +443,8 @@ export const action = [
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -479,15 +479,15 @@ export const action = [
     genre: "Action",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -522,15 +522,15 @@ export const action = [
     genre: "Action",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -568,15 +568,15 @@ export const horror = [
     genre: "Horror",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -611,15 +611,15 @@ export const horror = [
     genre: "Horror",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -661,8 +661,8 @@ export const horror = [
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -697,15 +697,15 @@ export const horror = [
     genre: "Horror",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-   director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -740,15 +740,15 @@ export const horror = [
     genre: "Horror",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -783,15 +783,15 @@ export const horror = [
     genre: "Horror",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -826,15 +826,15 @@ export const horror = [
     genre: "Horror",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -876,8 +876,8 @@ export const horror = [
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -919,8 +919,8 @@ export const horror = [
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -955,15 +955,15 @@ export const horror = [
     genre: "Horror",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -1005,8 +1005,8 @@ export const horror = [
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -1048,8 +1048,8 @@ export const horror = [
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -1094,8 +1094,8 @@ export const comedy = [
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -1137,8 +1137,8 @@ export const comedy = [
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -1180,8 +1180,8 @@ export const comedy = [
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -1223,8 +1223,8 @@ export const comedy = [
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -1266,8 +1266,8 @@ export const comedy = [
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -1302,15 +1302,15 @@ export const comedy = [
     genre: "Comedy",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -1345,15 +1345,15 @@ export const comedy = [
     genre: "Comedy",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -1388,15 +1388,15 @@ export const comedy = [
     genre: "Comedy",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -1417,15 +1417,15 @@ export const comedy = [
     genre: "Comedy",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-28T12:00:00+05:30", audi: "Audi 1" },
@@ -1448,15 +1448,15 @@ export const comedy = [
     genre: "Comedy",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -1479,15 +1479,15 @@ export const comedy = [
     genre: "Comedy",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -1512,15 +1512,15 @@ export const comedy = [
     genre: "Comedy",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -1550,15 +1550,15 @@ export const adventure = [
     genre: "Adventure",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -1583,15 +1583,15 @@ export const adventure = [
     genre: "Adventure",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-27T10:15:00+05:30", audi: "Audi 1" },
@@ -1615,15 +1615,15 @@ export const adventure = [
     genre: "Adventure",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-29T09:45:00+05:30", audi: "Audi 1" },
@@ -1644,15 +1644,15 @@ export const adventure = [
     genre: "Adventure",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -1676,15 +1676,15 @@ export const adventure = [
     genre: "Adventure",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-27T10:15:00+05:30", audi: "Audi 1" },
@@ -1710,15 +1710,15 @@ export const adventure = [
     genre: "Adventure",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -1743,15 +1743,15 @@ export const adventure = [
     genre: "Adventure",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -1778,15 +1778,15 @@ export const adventure = [
     genre: "Adventure",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-27T10:15:00+05:30", audi: "Audi 1" },
@@ -1812,15 +1812,15 @@ export const adventure = [
     genre: "Adventure",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -1845,15 +1845,15 @@ export const adventure = [
     genre: "Adventure",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -1875,15 +1875,15 @@ export const adventure = [
     genre: "Adventure",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },
@@ -1909,15 +1909,15 @@ export const adventure = [
     genre: "Adventure",
     price: 250,
     synopsis: "High-octane aerial action and a tale of duty and brotherhood set in the world of fighter pilots.",
-     director: [
+    director: [
       { name: "Karan Verma", img: FMD1 },
       { name: "Rhea Kapoor", img: FMD2 },
     ],
     producer: { name: "Zoya Kapoor", img: FMP1 },
     cast: [
       { name: "Arjun Shetty", role: "Lead (Hero)", img: FMC1 },
-      { name: "Nikita Rao", role: "Lead (Heroine)", img:  FMC2 },
-      { name: "Ramesh Pillai", role: "Wing Commander", img:  FMC3 },
+      { name: "Nikita Rao", role: "Lead (Heroine)", img: FMC2 },
+      { name: "Ramesh Pillai", role: "Wing Commander", img: FMC3 },
     ],
     slots: [
       { time: "2025-09-24T10:00:00+05:30", audi: "Audi 1" },

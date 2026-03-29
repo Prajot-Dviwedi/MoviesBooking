@@ -32,64 +32,7 @@ const PLACEHOLDER_IMG_MD = makePlaceholderDataUri(96, 96, "P");
 const PLACEHOLDER_POSTER = makePlaceholderDataUri(320, 480, "No Image");
 
 // Robust client-side normalization for image fields
-function getImageUrl(maybe) {
-  if (!maybe) return null;
 
-  // If it's an object (multer-like etc.), probe common fields
-  if (typeof maybe === "object") {
-    if (Array.isArray(maybe) && maybe.length) return getImageUrl(maybe[0]);
-    const possible =
-      maybe.url ||
-      maybe.path ||
-      maybe.filename ||
-      maybe.file ||
-      maybe.image ||
-      maybe.src ||
-      maybe.photo ||
-      maybe.preview ||
-      null;
-    if (possible) return getImageUrl(possible);
-    return null;
-  }
-
-  if (typeof maybe !== "string") return null;
-  const s = maybe.trim();
-  if (!s) return null;
-
-  // allow inline data URIs
-  if (s.startsWith("data:")) return s;
-
-  const apiBase = normalizeApiBase(API_BASE);
-
-  // Absolute http(s) URL
-  if (/^https?:\/\//i.test(s)) {
-    try {
-      const parsed = new URL(s);
-      const host = parsed.hostname.toLowerCase();
-
-      
-      if (host === "localhost" || host === "127.0.0.1") {
-        const parts = s.split("/uploads/");
-        const filename = parts.length > 1 ? parts.pop() : parsed.pathname.split("/").pop();
-        if (filename) return `${apiBase}/uploads/${filename}`;
-        // fallback to use path appended to apiBase
-        return `${apiBase}${parsed.pathname}`;
-      }
-
-      // otherwise leave external absolute URL unchanged (S3, remote)
-      return s;
-    } catch (e) {
-      // If URL parsing fails, fall through to treat as filename
-    }
-  }
-
-  // Leading slash like "/uploads/abc.png"
-  if (s.startsWith("/")) return `${apiBase}/${s.replace(/^\/+/, "")}`;
-
-  // Starting with "uploads/..." or plain filename
-  if (s.startsWith("uploads/")) return `${apiBase}/${s}`;
-  return `${apiBase}/uploads/${s.replace(/^uploads\//, "")}`;
-}
 
 // Utility to display duration (copied/adapted)
 function displayDuration(item) {
@@ -185,9 +128,8 @@ export default function ListMoviesPage() {
   function normalizeMovie(item) {
     const obj = { ...item };
 
-    // Force-normalize top-level poster/thumbnail through getImageUrl (do NOT fallback to raw localhost)
-    obj.poster = getImageUrl(item.poster) || null;
-    obj.thumbnail = getImageUrl(item.thumbnail) || obj.poster || null;
+    obj.poster = item.poster || null;
+    obj.thumbnail = item.thumbnail || obj.poster || null;
 
     // Normalize people arrays
     const normalizeTopPeople = (arr = []) =>
@@ -195,7 +137,7 @@ export default function ListMoviesPage() {
         const fileOrPreview = p?.preview || p?.file || p?.image || p?.url || null;
         return {
           ...(p || {}),
-          preview: getImageUrl(fileOrPreview) || null,
+          preview: fileOrPreview || null,
         };
       });
 
@@ -213,7 +155,7 @@ export default function ListMoviesPage() {
     ) {
       const lt = item.latestTrailer || {};
       obj.title = lt.title || item.title || item.movieName || null;
-      obj.thumbnail = getImageUrl(lt.thumbnail) || obj.thumbnail || null;
+      obj.thumbnail = lt.thumbnail || obj.thumbnail || null;
       obj.trailerUrl = lt.videoId || item.trailerUrl || lt.trailerUrl || null;
       obj.genres = lt.genres || item.genres || [];
       obj.year = lt.year || item.year || null;
@@ -224,7 +166,7 @@ export default function ListMoviesPage() {
       const normalizeLatestPeople = (arr = []) =>
         (arr || []).map((p) => ({
           ...(p || {}),
-          preview: getImageUrl(p?.file || p?.preview || p?.image) || null,
+          preview: (p?.file || p?.preview || p?.image) || null,
         }));
 
       obj.directors = normalizeLatestPeople(lt.directors || item.directors || []);
@@ -377,11 +319,11 @@ export default function ListMoviesPage() {
 
 function Card({ item, onOpen, onDelete }) {
   const posterOrThumb =
-    getImageUrl(item.poster) ||
-    getImageUrl(item.thumbnail) ||
-    getImageUrl(item.image) ||
-    getImageUrl(item.latestTrailer?.thumbnail) ||
-    PLACEHOLDER_POSTER;
+  item.poster ||
+  item.thumbnail ||
+  item.image ||
+  item.latestTrailer?.thumbnail ||
+  PLACEHOLDER_POSTER;
 
   return (
     <div className={styles5.card} onClick={onOpen}>
@@ -482,7 +424,7 @@ function PersonGrid({ list = [], roleLabel = "" }) {
       </div>
       <div className={styles5.personList}>
         {list.map((p, i) => {
-          const src = getImageUrl(p.preview) || getImageUrl(p.file) || getImageUrl(p.image) || getImageUrl(p.url) || PLACEHOLDER_IMG_SM;
+          const src = p.preview || p.file || p.image || p.url || PLACEHOLDER_IMG_SM;
           return (
             <div key={i} className={styles5.personItem}>
               <div className="relative">
@@ -518,7 +460,7 @@ function DetailView({ item, onClose }) {
     return gradients[type] || "from-gray-500 to-gray-600";
   };
 
-  const posterSrc = getImageUrl(item.poster) || getImageUrl(item.thumbnail) || PLACEHOLDER_POSTER;
+  const posterSrc = item.poster || item.thumbnail || PLACEHOLDER_POSTER;
 
   return (
     <div className={styles5.detailContainer}>
@@ -545,7 +487,7 @@ function DetailView({ item, onClose }) {
           <>
             {item.thumbnail && (
               <div className={styles5.detailThumbnail}>
-                <img src={getImageUrl(item.thumbnail) || PLACEHOLDER_POSTER} alt={item.title} className={styles5.detailThumbnailImage} onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = PLACEHOLDER_POSTER; }} />
+                <img src={item.thumbnail || PLACEHOLDER_POSTER} alt={item.title} className={styles5.detailThumbnailImage} onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = PLACEHOLDER_POSTER; }} />
               </div>
             )}
 
@@ -687,7 +629,7 @@ function DetailView({ item, onClose }) {
         {item.type === "releaseSoon" && (
           <div className={styles5.releaseSoonContainer}>
             <div className={styles5.releaseSoonImage}>
-              <img src={getImageUrl(item.poster) || PLACEHOLDER_POSTER} alt={item.movieName} className={styles5.detailPoster} onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = PLACEHOLDER_POSTER; }} />
+              <img src={item.poster || PLACEHOLDER_POSTER} alt={item.movieName} className={styles5.detailPoster} onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = PLACEHOLDER_POSTER; }} />
             </div>
             <div className={styles5.releaseSoonText}>Coming Soon</div>
             <div className={styles5.releaseSoonCategories}>

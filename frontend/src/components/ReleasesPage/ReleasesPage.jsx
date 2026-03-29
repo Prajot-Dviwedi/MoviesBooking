@@ -7,38 +7,6 @@ const PLACEHOLDER_IMG = "https://via.placeholder.com/400x600?text=No+Image";
 
 const normalizeApiBase = (base) => base.replace(/\/+$/, ""); // remove trailing slash
 
-const getUploadUrl = (maybeFilenameOrUrl) => {
-  if (!maybeFilenameOrUrl || typeof maybeFilenameOrUrl !== "string") return null;
-
-  const apiBase = normalizeApiBase(API_BASE);
-
-  // Case A: already a full URL
-  if (/^https?:\/\//i.test(maybeFilenameOrUrl)) {
-    try {
-      const parsed = new URL(maybeFilenameOrUrl);
-      // If it points to localhost (dev artifact), rewrite to API_BASE/uploads/<file>
-      if (parsed.hostname === "localhost" || parsed.hostname === "127.0.0.1") {
-        // attempt to extract filename after /uploads/
-        const parts = maybeFilenameOrUrl.split("/uploads/");
-        const filename = parts.length > 1 ? parts.pop() : parsed.pathname.split("/").pop();
-        return `${apiBase}/uploads/${filename}`;
-      }
-      // else return as-is (external absolute url)
-      return maybeFilenameOrUrl;
-    } catch (e) {
-      // if URL parsing fails, fall through to filename handling
-    }
-  }
-
-  // Case B: value looks like a path that may already include uploads/
-  if (maybeFilenameOrUrl.startsWith("/")) {
-    // strip leading slash then append to API_BASE
-    return `${apiBase}/${maybeFilenameOrUrl.replace(/^\/+/, "")}`;
-  }
-
-  // Case C: plain filename or "uploads/filename"
-  return `${apiBase}/uploads/${maybeFilenameOrUrl.replace(/^uploads\//, "")}`;
-};
 
 const mapBackendMovieToUi = (m) => {
   // backend returns poster (full URL or filename) and also latestTrailer.thumbnail etc.

@@ -10,15 +10,14 @@ import {
 
 const movieRouter = express.Router();
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, path.join(process.cwd(), "uploads")); // ➜ ./uploads
-  },
-  filename: (req, file, cb) => {
-    const unique = Date.now() + "-" + Math.round(Math.random() * 1e5);
-    const ext = path.extname(file.originalname);
-    // prefix for clarity
-    cb(null, `movie-${unique}${ext}`);
+import { CloudinaryStorage } from "multer-storage-cloudinary";
+import cloudinary from "../config/cloudinary.js";
+
+const storage = new CloudinaryStorage({
+  cloudinary,
+  params: {
+    folder: "movies",
+    allowed_formats: ["jpg", "png", "jpeg"],
   },
 });
 

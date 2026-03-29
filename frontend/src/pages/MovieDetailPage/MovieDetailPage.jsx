@@ -137,81 +137,7 @@ const PLACEHOLDER_IMG_MD = makePlaceholderDataUri(96, 96, "P");
 const PLACEHOLDER_POSTER = makePlaceholderDataUri(320, 480, "No Image");
 
 // Robust client-side normalization for image fields
-function getImageUrl(maybe) {
-  if (!maybe) return null;
 
-  // handle object forms
-  if (typeof maybe === "object") {
-    if (Array.isArray(maybe) && maybe.length) return getImageUrl(maybe[0]);
-    const possible =
-      maybe.url ||
-      maybe.path ||
-      maybe.filename ||
-      maybe.file ||
-      maybe.image ||
-      maybe.src ||
-      maybe.photo ||
-      maybe.preview ||
-      null;
-    if (possible) return getImageUrl(possible);
-    return null;
-  }
-
-  if (typeof maybe !== "string") return null;
-  let s = maybe.trim();
-  if (!s) return null;
-
-  // allow inline data URIs
-  if (s.startsWith("data:")) return s;
-
-  const apiBase = normalizeApiBase(API_BASE);
-
-  // If it's protocol-relative (//host/...), add http for parsing
-  let toParse = s;
-  if (toParse.startsWith("//")) toParse = "http:" + toParse;
-
-  // If it looks like "localhost:5000/..." without protocol, prefix http:// so URL can parse
-  if (/^localhost[:\/]/i.test(toParse) || /^127\.0\.0\.1[:\/]/.test(toParse)) {
-    toParse = "http://" + toParse;
-  }
-
-  // If string is absolute http(s) URL -> possibly rewrite localhost to API_BASE
-  if (/^https?:\/\//i.test(toParse)) {
-    try {
-      const parsed = new URL(toParse);
-      const host = parsed.hostname.toLowerCase();
-      // rewrite localhost/127.0.0.1 to your API_BASE upload path
-      if (host === "localhost" || host === "127.0.0.1") {
-        // try to extract filename from /uploads/<filename>
-        const parts = parsed.pathname.split("/uploads/");
-        const filename =
-          parts.length > 1 ? parts.pop() : parsed.pathname.split("/").pop();
-        if (filename) return `${apiBase}/uploads/${filename}`;
-        return `${apiBase}${parsed.pathname}`;
-      }
-      // otherwise return unchanged absolute URL
-      return s;
-    } catch (e) {
-      // fallthrough to treat as filename
-    }
-  }
-
-  // Leading slash -> absolute path on API
-  if (s.startsWith("/")) return `${apiBase}/${s.replace(/^\/+/, "")}`;
-
-  // If it starts with "uploads/" -> map to apiBase/uploads/..
-  if (s.startsWith("uploads/")) return `${apiBase}/${s}`;
-
-  // If it starts with "localhost:..." or "127.0.0.1:..." without protocol
-  if (/^localhost[:\/]|^127\.0\.0\.1[:\/]/.test(s)) {
-    const parts = s.split("/uploads/");
-    const filename = parts.length > 1 ? parts.pop() : s.split("/").pop();
-    return `${apiBase}/uploads/${filename}`;
-  }
-
-  // Default: treat it as a filename stored in uploads
-  return `${apiBase}/uploads/${s.replace(/^uploads\//, "")}`;
-}
 
 function to24Hour(timeStr = "00:00", ampm = "") {
   const [hRaw = "0", mRaw = "00"] = String(timeStr).split(":");
@@ -284,33 +210,6 @@ export default function MovieDetailPage() {
               item.producers.length
             )
               item.producer = item.producers[0];
-            // always normalize poster/thumbnail (this rewrites localhost URLs to API_BASE)
-            if (
-              item.poster &&
-              (typeof item.poster === "string" ||
-                typeof item.poster === "object")
-            ) {
-              item.poster = getImageUrl(item.poster) || item.poster;
-            }
-            if (
-              item.thumbnail &&
-              (typeof item.thumbnail === "string" ||
-                typeof item.thumbnail === "object")
-            ) {
-              item.thumbnail = getImageUrl(item.thumbnail) || item.thumbnail;
-            }
-            ["cast", "directors", "producers"].forEach((k) => {
-              if (Array.isArray(item[k])) {
-                item[k] = item[k].map((p) => {
-                  if (!p) return p;
-                  const preview =
-                    p.preview ||
-                    (p.file ? getImageUrl(p.file) : null) ||
-                    (p.image ? getImageUrl(p.image) : null);
-                  return { ...p, preview, img: p.img || preview };
-                });
-              }
-            });
           }
           setMovie(item || null);
         }
@@ -328,6 +227,7 @@ export default function MovieDetailPage() {
   useEffect(() => {
     if (!movie && !loading) toast.error("Movie not found.");
   }, [movie, loading]);
+
 
   const showtimeDays = useMemo(() => {
     if (!movie) return [];
@@ -547,12 +447,12 @@ export default function MovieDetailPage() {
     }
   };
 
-  const posterSrc =
-    getImageUrl(movie.img) ||
-    getImageUrl(movie.thumbnail) ||
-    getImageUrl(movie.poster) ||
-    getImageUrl(movie.posterUrl) ||
-    PLACEHOLDER_POSTER;
+const posterSrc =
+  movie.img ||
+  movie.thumbnail ||
+  movie.poster ||
+  movie.posterUrl ||
+  PLACEHOLDER_POSTER;
 
   const categoryList = Array.isArray(movie.categories)
     ? movie.categories
@@ -567,7 +467,7 @@ export default function MovieDetailPage() {
     (Array.isArray(movie.producers) && movie.producers[0]) ||
     null;
   const producerImg = producer
-    ? getImageUrl(producer.img || producer.preview || producer.file)
+    ? producer.img || producer.preview || producer.file
     : null;
 
   // Format the duration for display
@@ -782,7 +682,7 @@ export default function MovieDetailPage() {
                         {c.img || c.preview || c.file ? (
                           (() => {
                             const src =
-                              getImageUrl(c.img || c.preview || c.file) ||
+                                c.img || c.preview || c.file ||
                               PLACEHOLDER_IMG_SM;
                             return (
                               <img
@@ -852,7 +752,7 @@ export default function MovieDetailPage() {
                           {d?.img || d?.preview || d?.file ? (
                             (() => {
                               const src =
-                                getImageUrl(d.img || d.preview || d.file) ||
+                                d.img || d.preview || d.file ||
                                 PLACEHOLDER_IMG_MD;
                               return (
                                 <img

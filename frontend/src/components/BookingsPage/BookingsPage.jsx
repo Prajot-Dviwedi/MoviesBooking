@@ -21,78 +21,8 @@ const PLACEHOLDER_POSTER = makePlaceholderDataUri(320, 480, "No Image");
 function normalizeApiBase(b) {
   return String(b || "").replace(/\/+$/, "");
 }
-function getImageUrl(maybe) {
-  if (!maybe) return null;
 
-  // Already an object, pick common props
-  if (typeof maybe === "object") {
-    if (Array.isArray(maybe) && maybe.length) return getImageUrl(maybe[0]);
-    const possible =
-      maybe.url ||
-      maybe.path ||
-      maybe.filename ||
-      maybe.file ||
-      maybe.image ||
-      maybe.src ||
-      maybe.photo ||
-      maybe.preview ||
-      null;
-    if (possible) return getImageUrl(possible);
-    return null;
-  }
 
-  if (typeof maybe !== "string") return null;
-  const s = maybe.trim();
-  if (!s) return null;
-
-  // data URI
-  if (s.startsWith("data:")) return s;
-
-  const apiBase = normalizeApiBase(API_BASE);
-
-  // protocol-relative
-  let toParse = s;
-  if (toParse.startsWith("//")) toParse = "http:" + toParse;
-
-  // If starts with `localhost:...` or `127.0.0.1:...` without scheme, add scheme
-  if (/^(localhost|127\.0\.0\.1)(:|\/)/i.test(toParse)) {
-    toParse = "http://" + toParse;
-  }
-
-  // Absolute http(s): if host is localhost or 127.* rewrite to API_BASE/uploads/<filename>
-  if (/^https?:\/\//i.test(toParse)) {
-    try {
-      const parsed = new URL(toParse);
-      const host = parsed.hostname.toLowerCase();
-      if (host === "localhost" || host === "127.0.0.1") {
-        const parts = parsed.pathname.split("/uploads/");
-        const filename = parts.length > 1 ? parts.pop() : parsed.pathname.split("/").pop();
-        if (filename) return `${apiBase}/uploads/${filename}`;
-        return `${apiBase}${parsed.pathname}`;
-      }
-      // leave remote absolute urls intact (S3 etc.)
-      return s;
-    } catch (e) {
-      // fall through
-    }
-  }
-
-  // Leading slash -> absolute on API_BASE
-  if (s.startsWith("/")) return `${apiBase}/${s.replace(/^\/+/, "")}`;
-
-  // uploads/filename -> apiBase/uploads/filename
-  if (s.startsWith("uploads/")) return `${apiBase}/${s}`;
-
-  // hostname-like "localhost:5000/uploads/..." (no protocol)
-  if (/^(localhost|127\.0\.0\.1)[:\/]/i.test(s)) {
-    const parts = s.split("/uploads/");
-    const filename = parts.length > 1 ? parts.pop() : s.split("/").pop();
-    if (filename) return `${apiBase}/uploads/${filename}`;
-  }
-
-  // default treat as filename in uploads
-  return `${apiBase}/uploads/${s.replace(/^uploads\//, "")}`;
-}
 
 /* ---------- helper to read stored token ---------- */
 function getStoredToken() {
