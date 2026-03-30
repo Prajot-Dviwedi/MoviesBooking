@@ -6,11 +6,6 @@ import Movie from "../models/movieModel.js";
 
 const API_BASE = "https://moviesbookingback.onrender.com";
 
-const getUploadUrl = (path) => {
-  if (!path) return null;
-  return path;
-};
-
 const tryUnlinkUploadUrl = (urlOrFilename) => {
   const fn = extractFilenameFromUrl(urlOrFilename);
   if (!fn) return;
@@ -42,7 +37,7 @@ const normalizeLatestPersonFilename = (value) => {
 const personToPreview = (p) => {
   if (!p) return { name: "", role: "", preview: null };
   const candidate = p.preview || p.file || p.image || p.url || null;
-  return { name: p.name || "", role: p.role || "", preview: candidate ? getUploadUrl(candidate) : null };
+  return { name: p.name || "", role: p.role || "", preview: candidate ? (candidate) : null };
 };
 
 /* ---------------------- shared transformers ---------------------- */
@@ -55,10 +50,10 @@ const buildLatestTrailerPeople = (arr = []) =>
 
 const enrichLatestTrailerForOutput = (lt = {}) => {
   const copy = { ...lt };
-  copy.thumbnail = copy.thumbnail ? getUploadUrl(copy.thumbnail) : copy.thumbnail || null;
+  copy.thumbnail = copy.thumbnail ? (copy.thumbnail) : copy.thumbnail || null;
   const mapPerson = (p) => {
     const c = { ...(p || {}) };
-    c.preview = c.file ? getUploadUrl(c.file) : (c.preview ? getUploadUrl(c.preview) : null);
+    c.preview = c.file ? (c.path) : (c.preview ? (c.preview) : null);
     c.name = c.name || "";
     c.role = c.role || "";
     return c;
@@ -71,7 +66,7 @@ const enrichLatestTrailerForOutput = (lt = {}) => {
 
 const normalizeItemForOutput = (it = {}) => {
   const obj = { ...it };
-  obj.thumbnail = it.latestTrailer?.thumbnail ? getUploadUrl(it.latestTrailer.thumbnail) : (it.poster ? getUploadUrl(it.poster) : null);
+  obj.thumbnail = it.latestTrailer?.thumbnail ? (it.latestTrailer.thumbnail) : (it.poster ? (it.poster) : null);
   obj.trailerUrl = it.trailerUrl || (it.latestTrailer?.url || it.latestTrailer?.videoId) || null;
 
   if (it.type === "latestTrailers" && it.latestTrailer) {
@@ -114,7 +109,7 @@ export async function createMovie(req, res) {
     const producers = safeParseJSON(body.producers) || [];
 
     // generic attacher for arrays of uploaded files -> target array entries
-    const attachFiles = (filesArrName, targetArr, toFilename = (f) => getUploadUrl(f)) => {
+    const attachFiles = (filesArrName, targetArr, toFilename = (f) => (f)) => {
       if (!req.files?.[filesArrName]) return;
       req.files[filesArrName].forEach((file, idx) => {
         if (targetArr[idx]) targetArr[idx].file = toFilename(file.path);

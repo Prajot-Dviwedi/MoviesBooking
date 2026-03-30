@@ -36,8 +36,8 @@ const mapMovieToTrailerItem = (movie) => {
   const lt = movie.latestTrailer || {};
   const title = lt.title || movie.movieName || movie.title || "Untitled";
   const thumbnail =
-    getUploadUrl(lt.thumbnail) ||
-    getUploadUrl(movie.poster) ||
+    (lt.thumbnail) ||
+    (movie.poster) ||
     PLACEHOLDER_THUMB;
   const videoUrl =
     lt.videoId || lt.videoUrl || movie.trailerUrl || movie.videoUrl || "";
@@ -65,9 +65,9 @@ const mapMovieToTrailerItem = (movie) => {
     credits["Director"] = {
       name: firstDirector.name || "Unknown",
       image:
-        getUploadUrl(firstDirector.file) ||
-        getUploadUrl(firstDirector.image) ||
-        getUploadUrl(firstDirector.photo) ||
+      (firstDirector.path) ||
+      (firstDirector.image) ||
+      (firstDirector.photo) ||
         PLACEHOLDER_THUMB,
     };
   }
@@ -75,9 +75,9 @@ const mapMovieToTrailerItem = (movie) => {
     credits["Producer"] = {
       name: firstProducer.name || "Unknown",
       image:
-        getUploadUrl(firstProducer.file) ||
-        getUploadUrl(firstProducer.image) ||
-        getUploadUrl(firstProducer.photo) ||
+      (firstProducer.path) ||
+      (firstProducer.image) ||
+      (firstProducer.photo) ||
         PLACEHOLDER_THUMB,
     };
   }
@@ -85,9 +85,9 @@ const mapMovieToTrailerItem = (movie) => {
     credits["Singer"] = {
       name: firstSinger.name || "Unknown",
       image:
-        getUploadUrl(firstSinger.file) ||
-        getUploadUrl(firstSinger.image) ||
-        getUploadUrl(firstSinger.photo) ||
+        (firstSinger.path) ||
+        (firstSinger.image) ||
+        (firstSinger.photo) ||
         PLACEHOLDER_THUMB,
     };
   }

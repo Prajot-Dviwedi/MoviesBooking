@@ -19,7 +19,7 @@ const mapBackendMovie = (m) => {
   const id = m._id || m.id || "";
   const title = m.movieName || m.title || "Untitled";
   const rawImg = m.poster || m.latestTrailer?.thumbnail || m.thumbnail || null;
-  const image = getUploadUrl(rawImg) || PLACEHOLDER;
+  const image = (rawImg) || PLACEHOLDER;
 
   // pick first category (normalize to lowercase for category id comparisons)
   const cat =

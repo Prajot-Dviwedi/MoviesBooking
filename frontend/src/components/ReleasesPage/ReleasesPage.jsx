@@ -12,7 +12,7 @@ const mapBackendMovieToUi = (m) => {
   // backend returns poster (full URL or filename) and also latestTrailer.thumbnail etc.
   const poster =
     m.poster || (m.latestTrailer && m.latestTrailer.thumbnail) || null;
-  const image = getUploadUrl(poster) || PLACEHOLDER_IMG;
+  const image = poster || PLACEHOLDER_IMG;
 
   // display a category string (pick categories array or latestTrailer.genres)
   const category =

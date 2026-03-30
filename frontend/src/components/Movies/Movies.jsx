@@ -77,7 +77,7 @@ export default function Movies() {
           {movies.map((m) => {
             const rawImg =
               m.poster || m.latestTrailer?.thumbnail || m.thumbnail || null;
-            const imgSrc = getUploadUrl(rawImg) || PLACEHOLDER;
+            const imgSrc = (rawImg) || PLACEHOLDER;
             const title = m.movieName || m.title || "Untitled";
             const category =
               (Array.isArray(m.categories) && m.categories[0]) ||
