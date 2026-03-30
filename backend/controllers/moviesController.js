@@ -102,8 +102,8 @@ export async function createMovie(req, res) {
 
 
     const posterUrl = req.files?.poster?.[0]?.path || (body.poster || null);
-    const trailerUrl = req.files?.trailerUrl?.[0]?.path || body.trailerUrl || null;
-    const videoUrl = req.files?.videoUrl?.[0]?.path || body.videoUrl || null;
+    const trailerUrl = body.trailerUrl || null;
+    const videoUrl = body.videoUrl || null;
 
     const categories = safeParseJSON(body.categories) || (body.categories ? String(body.categories).split(",").map(s => s.trim()).filter(Boolean) : []);
     const slots = safeParseJSON(body.slots) || [];

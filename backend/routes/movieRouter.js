@@ -23,9 +23,7 @@ const storage = new CloudinaryStorage({
 
 const upload = multer({ storage }).fields([
   { name: "poster", maxCount: 1 },
-  { name: "trailerUrl", maxCount: 1 },
-  { name: "videoUrl", maxCount: 1 },
-  { name: "ltThumbnail", maxCount: 1 }, // ✅ FIXED name
+  { name: "ltThumbnail", maxCount: 1 },
   { name: "castFiles", maxCount: 20 },
   { name: "directorFiles", maxCount: 20 },
   { name: "producerFiles", maxCount: 20 },
