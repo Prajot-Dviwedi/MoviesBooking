@@ -6,7 +6,10 @@ import Movie from "../models/movieModel.js";
 
 const API_BASE = "https://moviesbookingback.onrender.com";
 
-
+const getUploadUrl = (path) => {
+  if (!path) return null;
+  return path;
+};
 
 const tryUnlinkUploadUrl = (urlOrFilename) => {
   const fn = extractFilenameFromUrl(urlOrFilename);
